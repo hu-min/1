@@ -24,15 +24,15 @@ jobs:
         sudo timedatectl set-timezone Asia/Shanghai
     - name: 下载源码
       run: |
-        sudo git clone https://github.com/keke1023/Padavan.git /opt/rt-n56u
-        sudo curl -fsSL git.io/file-transfer | sh
+        git clone https://github.com/keke1023/Padavan.git /opt/rt-n56u
+        curl -fsSL git.io/file-transfer | sh
         cd /opt/rt-n56u/toolchain-mipsel 
-        sudo sh dl_toolchain.sh
+        sh dl_toolchain.sh
         cd /opt/rt-n56u/trunk
-        sudo ./clear_tree
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@main
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
     - name: 编译
-      run: 
+      run: |
+        ./clear_tree
          sudo fakeroot ./build_firmware_modify K2P-USB-5.0
