@@ -46,5 +46,5 @@ jobs:
     - name: Upload Artifact
       uses: actions/upload-artifact@main
       with:
-        name: Padavan_${{date --date='TZ="BEIJING"' "+%y%m%d%H%M%s"}}
+        name: Padavan_$riqi
         path: /opt/rt-n56u/trunk/images/*.trx
