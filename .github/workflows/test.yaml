@@ -41,6 +41,8 @@ jobs:
         sed -i 's/PDCN/oOo/g' /opt/rt-n56u/trunk/user/shared/defaults.h
         curl https://github.com/chongshengB/rt-n56u/raw/master/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png -o /opt/rt-n56u/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png
         curl https://github.com/hu-min/1/raw/main/k2p.config -o /opt/rt-n56u/trunk/configs/templates/k2p.conig
+        cd /opt/rt-n56u/trunk
+        fakeroot ./build_firmware_modify k2p
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@main
       if: (github.event.inputs.ssh == 'true' && github.event.inputs.ssh  != 'false') || contains(github.event.action, 'ssh')
