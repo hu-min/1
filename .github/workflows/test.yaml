@@ -30,6 +30,7 @@ jobs:
         sh dl_toolchain.sh
         cd /opt/rt-n56u/trunk
         cd /opt/hostedtoolcache/go/
+        ls
         mv 1.17.6 1.14.12
         cd /opt/rt-n56u/trunk
         echo "RELEASE_DATE=$date" >> $GITHUB_ENV
