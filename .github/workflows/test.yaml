@@ -39,8 +39,8 @@ jobs:
         sed -i 's/1234567890/25103515/g' /opt/rt-n56u/trunk/user/shared/defaults.h
         sed -i 's/PDCN_5G/oOo/g' /opt/rt-n56u/trunk/user/shared/defaults.h
         sed -i 's/PDCN/oOo/g' /opt/rt-n56u/trunk/user/shared/defaults.h
-        curl https://github.com/chongshengB/rt-n56u/raw/master/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png -o /opt/rt-n56u/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png
-        curl https://github.com/hu-min/1/raw/main/k2p.config -o /opt/rt-n56u/trunk/configs/templates/k2p.config
+        wget https://github.com/chongshengB/rt-n56u/raw/master/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png -O /opt/rt-n56u/trunk/user/www/n56u_ribbon_fixed/bootstrap/img/asus_logo.png
+        wget https://github.com/hu-min/1/raw/main/k2p.config -O /opt/rt-n56u/trunk/configs/templates/k2p.config
         cd /opt/rt-n56u/trunk
         fakeroot ./build_firmware_modify k2p
     - name: SSH connection to Actions
