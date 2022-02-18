@@ -1,4 +1,4 @@
-name: Build Environment
+name: Build Padavan Environment
 on:
   repository_dispatch:
   workflow_dispatch:
